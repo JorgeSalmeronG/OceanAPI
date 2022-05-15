@@ -1,0 +1,24 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model sitios_prioritarios {
+  id Int @id @default(autoincrement())
+  sitio_prioritario String @db.VarChar(255)
+  perimetro Float?
+  area_hectareas Float?
+  ecorregion String @db.VarChar(255)
+  fisiografia String @db.VarChar(255)
+  formas_emergentes String @db.VarChar(255)
+  formas_sumergidas String @db.VarChar(255)
+  habitat String @db.VarChar(255)
+  importancia String @db.VarChar(255)
+}
+
